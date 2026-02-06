@@ -86,3 +86,9 @@ body {
   align-items: center;
   margin-top: 13px;
 }
+
+.list-group-item {
+  background-color: #3a506b;
+  color: white;
+  border: none;
+}

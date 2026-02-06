@@ -21,17 +21,20 @@ const loadStandings = async (year) => {
     },
   };
 
-  //   const response = await fetch(url, options);
-  const result = getLeagueStandings(); // await response.json();
-  const teams = result.standings.entries;
+  const response = await fetch(url, options);
+  const result = await response.json(); //getLeagueStandings();
+  const entries = result.data.response.standings.entries;
 
   standingsList.innerHTML = "";
-  teams.forEach((team) => {
+  count = 1;
+  entries.forEach((entry) => {
+    name = count + ". " + entry.team.displayName;
     const listItem = `
     <li class="list-group-item">
-      ${team.entries}:
+      ${name}
     </li>
   `;
+    count++;
     standingsList.insertAdjacentHTML("beforeend", listItem);
   });
 };
