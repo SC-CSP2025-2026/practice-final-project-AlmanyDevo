@@ -29,7 +29,7 @@ const loadStandings = async (year) => {
   teams.forEach((team) => {
     const listItem = `
     <li class="list-group-item">
-      
+      ${team.entries}:
     </li>
   `;
     standingsList.insertAdjacentHTML("beforeend", listItem);
